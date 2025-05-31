@@ -1,7 +1,7 @@
-Convert this comment into an issue for an audit report in Markdown. Use @filename_or_url for context. Provide sound reasoning such as to make a convincing case. Do not replicate or reference the comment, instead, generate a section in a code block as follows:  
+Convert this comment into an issue for an audit report in Markdown. Use @filename_or_url for context. Provide sound reasoning such as to make a convincing case. The severity and number of the issue, I provided in the comment. Do not replicate or reference the comment, instead, generate a section in a code block as follows:  
   
 ```  
-## Title in normal case stating the highest impact in simple terms
+## [C/H/M-Number] Title in normal case stating the highest impact in simple terms. Only upper case the first word of the sentence and other essentials
 
 | **Topic** | ... |
 | --- | --- |
@@ -23,4 +23,6 @@ However, do not include any code blocks from the existing code in your output as
 **Remediations to Consider** 
 Recommendation on how to fix or improve the code in question. Depending on the complexity of the issue, this could range from a detailed exploration of different solutions to a simple code fix. If it is just a simple code fix, provide the fix as a diff in a code block with two backticks.  
   
+---
+
 ```
