@@ -7,7 +7,7 @@ Convert this comment into an issue for an audit report in Markdown. Use @filenam
 | --- | --- |
 | **Impact** | High/Medium/Low |
 
-Detailed description of this finding as inferred from the comment and the context. Walk through the part of the logic where the root cause of the issue is located, clearly point out the root cause and finally outline the scenario with the highest impact.  Do not omit any information provided in the comment. No need for introduction/summary paragraph in the report.
+Detailed description of this finding as inferred from the comment and the context. Walk through the part of the logic where the root cause of the issue is located, clearly point out the root cause and finally outline the scenario with the highest impact.  Do not omit any information provided in the comment. No need for introduction/summary paragraph in the report. Don't mention about line number.
 
 
 **Remediations to Consider** 

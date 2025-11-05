@@ -3,7 +3,7 @@ Convert this comment into an issue for an audit report in Markdown. Use @filenam
 # Title in normal case stating the highest impact in simple terms. Only upper case the first word of the sentence and other essentials
   
 ## Description  
-Detailed description of this finding as inferred from the comment and the context. Walk through the part of the logic where the root cause of the issue is located, clearly point out the root cause and finally outline the scenario with the highest impact.  Do not omit any information provided in the comment. No need for introduction/summary paragraph in the report.
+Detailed description of this finding as inferred from the comment and the context. Walk through the part of the logic where the root cause of the issue is located, clearly point out the root cause and finally outline the scenario with the highest impact.  Do not omit any information provided in the comment. No need for introduction/summary paragraph in the report. Don't mention about line number.
 
 Include any links from the comment. If there are any quotes in the comment, integrate them into your description. All mentions to function, variable and contract names should be formatted as `code snippets`. Functions must always be formatted with parentheses after their name, as in `functionName()`. Code blocks must be formatted using TWO backticks instead of 3, as in:
 
