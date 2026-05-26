@@ -2,7 +2,7 @@ Convert this comment into an issue for an audit report in Markdown. Use @filenam
 
 Avoid long synonym stacks and hedging (for example stacking "might", "possibly", or "perhaps"). When a statement is not directly supported by the comment or @ context, prefix that clause with exactly `Speculation:` (same line or the line immediately before the speculative sentence). Claims grounded in the comment or @ context need no such label. Prefer direct wording so an auditor can verify quickly.
 
-```  
+````  
 ## [H/M/L-Number] Title in normal case stating the highest impact in simple terms. Only upper case the first word of the sentence and other essentials
 
 **One-line claim and scope**
@@ -21,24 +21,10 @@ List the main `function()`, instruction, handler, or route names, and the contra
 
 Detailed description of this finding as inferred from the comment and the context. Walk through the part of the logic where the root cause of the issue is located, clearly point out the root cause and finally outline the scenario with the highest impact.  Do not omit any information provided in the comment. No need for introduction/summary paragraph in the report. Do not mention line numbers.
 
-Include any links from the comment. If there are any quotes in the comment, integrate them into your description. All mentions to function, variable and contract names should be formatted as `code snippets`. Functions must always be formatted with parentheses after their name, as in `functionName()`. Code blocks must be formatted using TWO backticks instead of 3, as in:
-
-``
-some function() {
-}
-``
-**Reference: filename**
-
-However, do not include any code blocks from the existing code in your output as those will be linked to the report on submission.
+Include any links from the comment. If there are any quotes in the comment, integrate them into your description. All mentions to function, variable and contract names should be formatted as `code snippets`. Functions must always be formatted with parentheses after their name, as in `functionName()`. Do not include any code blocks from the existing code in your output as those will be linked to the report on submission.
 
 **Step by step reproduce**
-Numbered steps from a stated initial state (environment, fork or chain, roles, balances, config). Include setup, calls, parameters, and what to observe after each step when useful.
-
-**Expected vs actual**
-A compact two-row table or two labeled lines so verification is binary:
-
-| **Expected** | ... |
-| **Actual** | ... |
+Numbered steps that describe the issue, attack, or exploit sequence in protocol terms (who acts, which `function()` or instruction runs, order of calls, relevant parameters or amounts, and how state or balances change). State any assumed starting conditions (for example role, balance, or config) only as context for that sequence. Do not write test-runner or CI steps (for example `forge test`, `npm test`, or how to execute a test file); those belong outside this section if needed elsewhere.
 
 **Auditor verification checklist**
 Include 3 to 5 lines starting with `- [ ]`, each a short imperative check an auditor can perform to confirm or reject the finding.
@@ -47,17 +33,15 @@ Include 3 to 5 lines starting with `- [ ]`, each a short imperative check an aud
 Bullets listing the main conditions, configurations, or evidence under which this finding would not apply or would be disproved.
 
 **Fix**
-The fix must be given only as a unified diff in a code block fenced with TWO backticks (not three), for example:
+The fix must be given only as a snippet diff in a fenced `diff` code block (three backticks, not two). Omit git headers (`diff --git`, `---`/`+++`, `@@`). Include only the changed region with `-`/`+` lines as needed. End the block with a `Reference:` line: repo-relative path from @ context, then `#L<start>-L<end>` for the changed span.
 
-``
-diff --git a/path/to/file.sol b/path/to/file.sol
---- a/path/to/file.sol
-+++ b/path/to/file.sol
-@@ -1,3 +1,3 @@
+```diff
+
 - old line
 + new line
-``
+```
+Reference: path/to/file.ext#Lstart-Lend
 
 ---
 
-```
+````
