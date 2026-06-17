@@ -1,5 +1,5 @@
-Return your full previous reply in a code block. Larger code blocks within your previous reply must be formatted using TWO backticks instead of three:  
-  
-``  
-function someCode()  
-``
+Return your full previous reply in a code block. Nested code blocks within your previous reply must use standard three-backtick fences with a language tag: `diff` for recommended code changes, or `solidity`, `rust`, or the matching language for illustrative code.
+
+```solidity
+function someCode()
+```
