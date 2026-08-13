@@ -11,5 +11,5 @@ Include any links from the comment. If there are any quotes in the comment, inte
   
 ## Recommendation
   
-Recommendation on how to fix or improve the code in question. If it is just a simple code fix, provide the fix in a fenced ```diff block. Omit git headers (`diff --git`, `---`/`+++`, `@@`); include only the changed region with `-`/`+` lines as needed.
+Recommendation on how to fix or improve the code in question. If it is just a simple code fix, provide the fix in a fenced ``diff block. Omit git headers (`diff --git`, `---`/`+++`, `@@`); include only the changed region with `-`/`+` lines as needed.
 ```

@@ -9,11 +9,11 @@ Detailed description of this finding as inferred from the comment and the contex
   
 Include any links from the comment. If there are any quotes in the comment, integrate them into your description. All mentions to function, variable and contract names should be formatted as `code snippets`.
 
-Use standard fenced code blocks (three backticks) with a language tag: `diff` for recommended code changes; `solidity`, `rust`, or the matching language when showing illustrative code
+Use standard fenced code blocks (two backticks) with a language tag: `diff` for recommended code changes; `solidity`, `rust`, or the matching language when showing illustrative code
   
 However, do not include any code blocks from the existing code in your output as those will be linked to the report on submission.
   
 ## Recommendation
   
-Recommendation on how to fix or improve the code in question. Depending on the complexity of the issue, this could range from a detailed exploration of different solutions to a simple code fix. If it is just a simple code fix, provide the fix in a fenced ```diff block. Omit git headers (`diff --git`, `---`/`+++`, `@@`); include only the changed region with `-`/`+` lines as needed.
+Recommendation on how to fix or improve the code in question. Depending on the complexity of the issue, this could range from a detailed exploration of different solutions to a simple code fix. If it is just a simple code fix, provide the fix in a fenced ``diff block. Omit git headers (`diff --git`, `---`/`+++`, `@@`); include only the changed region with `-`/`+` lines as needed.
 ```

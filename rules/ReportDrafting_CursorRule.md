@@ -13,7 +13,7 @@ When I provide you with an inline code comment (often selected within the IDE), 
     *   **Mitigation:** Suggest concrete, actionable steps to fix the vulnerability, grounded in the code and context provided.
 4.  **Language and Tone:** Use clear, concise, professional, and technically accurate language suitable for a security report. Avoid conversational filler, excessive jargon (unless standard for the context, e.g., specific DeFi terms if relevant), or overly "AI-like" phrasing. Aim for an "organic" feel as mentioned in the project goals. Do not use em-dashes (—) in the output; rewrite with commas, parentheses, colons, or separate sentences instead.
 5.  **Formatting and naming conventions:**
-    *   **Code fences:** Use standard fenced code blocks (three backticks) with a language tag. Use `diff` for recommended code changes; use `solidity`, `rust`, or the matching language when showing illustrative or existing code snippets.
+    *   **Code fences:** Nested code blocks in the generated report must use two-backtick fences with a language tag. Use `diff` for recommended code changes; use `solidity`, `rust`, or the matching language when showing illustrative or existing code snippets.
     *   **Contract names:** When referring to contracts from `@` context (for example `@src/Vault.sol`), write "the `Vault` contract" in prose, not file paths like `@src/Vault.sol`.
     *   **Function names:** Use the contract-qualified form `contractA.functionName()`, not bare `functionName()` or "functionName function".
     *   **Prose style:** Explain issues with natural phrasing (for example, "the problem is that..." or "this will lead to...").

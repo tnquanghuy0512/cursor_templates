@@ -1,5 +1,5 @@
-Return your full previous reply in a code block. Nested code blocks within your previous reply must use standard three-backtick fences with a language tag: `diff` for recommended code changes, or `solidity`, `rust`, or the matching language for illustrative code.
+Return your full previous reply in a code block. Nested code blocks within your previous reply must use two-backtick fences with a language tag: `diff` for recommended code changes, or `solidity`, `rust`, or the matching language for illustrative code.
 
-```solidity
+``solidity
 function someCode()
-```
+``

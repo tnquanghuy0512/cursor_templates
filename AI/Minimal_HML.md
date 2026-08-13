@@ -33,13 +33,12 @@ Include 3 to 5 lines starting with `- [ ]`, each a short imperative check an aud
 Bullets listing the main conditions, configurations, or evidence under which this finding would not apply or would be disproved.
 
 **Fix**
-The fix must be given only as a snippet diff in a fenced `diff` code block. Omit git headers (`diff --git`, `---`/`+++`, `@@`). Include only the changed region with `-`/`+` lines as needed. End the block with a `Reference:` line: repo-relative path from @ context, then `#L<start>-L<end>` for the changed span.
+The fix must be given only as a snippet diff in a fenced ``diff code block. Omit git headers (`diff --git`, `---`/`+++`, `@@`). Include only the changed region with `-`/`+` lines as needed. End the block with a `Reference:` line: repo-relative path from @ context, then `#L<start>-L<end>` for the changed span.
 
-```diff
-
+``diff
 - old line
 + new line
-```
+``
 Reference: path/to/file.ext#Lstart-Lend
 
 ---

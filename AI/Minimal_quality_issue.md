@@ -29,13 +29,12 @@ At most 5 short numbered steps for the issue or faulty sequence in protocol term
 1 or 2 bullets: conditions that would disprove or narrow the finding.
 
 **Fix**
-The fix must be given only as a snippet diff in a fenced `diff` code block. Omit git headers (`diff --git`, `---`/`+++`, `@@`). Include only the changed region with `-`/`+` lines as needed. End the block with a `Reference:` line: repo-relative path from @ context, then `#L<start>-L<end>` for the changed span.
+The fix must be given only as a snippet diff in a fenced ``diff code block. Omit git headers (`diff --git`, `---`/`+++`, `@@`). Include only the changed region with `-`/`+` lines as needed. End the block with a `Reference:` line: repo-relative path from @ context, then `#L<start>-L<end>` for the changed span.
 
-```diff
-
+``diff
 - old line
 + new line
-```
+``
 Reference: path/to/file.ext#Lstart-Lend
 
 
