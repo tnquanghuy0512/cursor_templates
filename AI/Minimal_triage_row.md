@@ -1,30 +1,39 @@
-Render one abbreviated audit row for Part III (manual verification) or Part IV (mini triage) of a multi-tier report. Use candidate fields from `06-ReproChecks.json` or the handoff. Refer to contracts as "the `X` contract", not `@src/X.sol` paths; refer to functions as `contractA.functionName()`, not bare `functionName()` or "functionName function". Do not use em-dashes (—). Do not present the row as a confirmed finding.
+Layout for one abbreviated audit row in Part III (manual verification) or Part IV (mini triage) of a multi-tier report. `bh.py report` reads the block between the `bh-row` markers and fills one copy per row, so edits there change every rendered row. Text outside the markers is not rendered. Do not use em-dashes (—). Do not present the row as a confirmed finding.
 
-For Part III use status `Manual verification — not reproduced locally`. For Part IV set status to `Mini triage — {mini_category}` where `mini_category` is one of: `needs_evidence`, `c0_high`, `falsified`, `backlog`, `coverage_gap`.
+Placeholders, filled from `06-ReproChecks-MASTER.json` and the coverage gaps:
 
-Output exactly one fenced markdown code block per row (four backticks outer fence as below). Keep the entire block under 120 words.
+- `{id}`, `{title}`: the row's id and title.
+- `{status}`: `Manual verification: not reproduced locally` for Part III, `Mini triage: {mini_category}` for Part IV. `mini_category` is one of `needs_evidence`, `c0_high`, `falsified`, `backlog`, `coverage_gap`.
+- `{confidence}`: C0 to C2, or `n/a`.
+- `{severity}`: the severity hypothesis, or `not assessed`.
+- `{verification}`: the verification status and a one-line result.
+- `{anchors}`: each anchor as `` `symbol` (path:lines) ``, separated by semicolons.
+- `{attack_path}`, `{next_step}`: the first line of the attack path and of the first falsification step or manual-verifier note.
+- `{found_by}`: the `Found by:` line, plus one `Also found by:` line per extra discoverer.
 
-````
+Blockers, missing artifacts, and attempted fixes are rendered as one row with id `NEEDS-EVIDENCE` and title `Environment and artifact blockers`: blockers and missing artifacts go in `{attack_path}`, attempted fixes in `{next_step}`.
+
+<!-- bh-row-start -->
 ### [{id}] {title}
 
-**Status:** {Manual verification — not reproduced locally | Mini triage — {mini_category}}
+**Status:** {status}
 
 | **Field** | **Value** |
 | --- | --- |
-| **Confidence** | {C0|C1|C2} |
-| **Severity hypothesis** | {severity_hypothesis} |
-| **Verification** | {verification_status}: {one-line result} |
+| **Confidence** | {confidence} |
+| **Severity hypothesis** | {severity} |
+| **Verification** | {verification} |
 
 **Anchors**
-{the `Contract` contract; `Contract.functionName()` — one line}
+{anchors}
 
 **Attack path**
-{one sentence}
+{attack_path}
 
 **Next step**
-{first falsification step or notes_for_manual_verifier; one line}
+{next_step}
+
+{found_by}
 
 *Not a confirmed finding. Requires manual verification or additional evidence.*
-````
-
-When `mini_category` is `needs_evidence` and there is no candidate id, use id `NEEDS-EVIDENCE` and title `Environment and artifact blockers`; put blockers in **Attack path** and attempted fixes in **Next step**.
+<!-- bh-row-end -->
